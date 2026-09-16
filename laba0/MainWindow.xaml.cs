@@ -31,6 +31,8 @@ namespace laba0
             tr = new Triangle(p1, p2, p3);
 
             DrawTriangle(tr);
+            Rectangle rect = new Rectangle(new Point2D(50, 50), 100, 80);
+            DrawRectangle(rect);
         }
 
         public void DrawLine(Point2D p1, Point2D p2)
@@ -53,6 +55,13 @@ namespace laba0
         public void ClearScene()
         {
             Scene.Children.Clear();
+        }
+        public void DrawRectangle(Rectangle rect)
+        {
+            DrawLine(rect.TopLeft, rect.TopRight);
+            DrawLine(rect.TopRight, rect.BottomRight);
+            DrawLine(rect.BottomRight, rect.BottomLeft);
+            DrawLine(rect.BottomLeft, rect.TopLeft);
         }
     }
 }
