@@ -108,12 +108,11 @@ namespace laba0
         {
             ClearScene();
         }
-        public void DrawRectangle(Rectangle rect)
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            DrawLine(rect.TopLeft, rect.TopRight);
-            DrawLine(rect.TopRight, rect.BottomRight);
-            DrawLine(rect.BottomRight, rect.BottomLeft);
-            DrawLine(rect.BottomLeft, rect.TopLeft);
+            if (SceneTransform == null) return;
+            SceneTransform.X = SliderX.Value;
+            SceneTransform.Y = SliderY.Value;
         }
     }
 }
