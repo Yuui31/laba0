@@ -25,6 +25,16 @@ namespace laba0
         {
             InitializeComponent();
             CreateRandomTriangle();
+
+            // Создание треугольника со случайными координатами
+            Point2D p1 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            Point2D p2 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            Point2D p3 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            tr = new Triangle(p1, p2, p3);
+
+            DrawTriangle(tr);
+            Rectangle rect = new Rectangle(new Point2D(50, 50), 100, 80);
+            DrawRectangle(rect);
         }
         public void DrawLine(Point2D p1, Point2D p2)
         {
@@ -97,6 +107,13 @@ namespace laba0
         private void BtnClear_Click(object sender, RoutedEventArgs e)
         {
             ClearScene();
+        }
+        public void DrawRectangle(Rectangle rect)
+        {
+            DrawLine(rect.TopLeft, rect.TopRight);
+            DrawLine(rect.TopRight, rect.BottomRight);
+            DrawLine(rect.BottomRight, rect.BottomLeft);
+            DrawLine(rect.BottomLeft, rect.TopLeft);
         }
     }
 }
