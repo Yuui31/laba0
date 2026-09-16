@@ -5,10 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:laba0"
         mc:Ignorable="d"
-        Title="Фигуры" Height="500" Width="750">
+        Title="Фигуры" Height="550" Width="900">
     <Grid>
-        <Canvas x:Name="Scene" HorizontalAlignment="Left" Height="400" 
-                Margin="15,15,0,0" VerticalAlignment="Top" Width="700" 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
+            <Button x:Name="BtnRandomTriangle" Content="Произвольный треугольник" 
+                    Margin="5" Padding="10,5" Click="BtnRandomTriangle_Click"/>
+            <Button x:Name="BtnRandomRectangle" Content="Произвольный прямоугольник" 
+                    Margin="5" Padding="10,5" Click="BtnRandomRectangle_Click"/>
+            <Button x:Name="BtnSquare" Content="Квадрат" 
+                    Margin="5" Padding="10,5" Click="BtnSquare_Click"/>
+            <Button x:Name="BtnClear" Content="Очистить" 
+                    Margin="5" Padding="10,5" Click="BtnClear_Click"/>
+        </StackPanel>
+
+        <Canvas x:Name="Scene" Grid.Row="1" HorizontalAlignment="Left" Height="400" 
+                Margin="15,15,0,0" VerticalAlignment="Top" Width="850" 
                 Background="White"/>
     </Grid>
 </Window>
