@@ -15,14 +15,38 @@ using System.Windows.Shapes;
 
 namespace laba0
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        // Рисование линии по двум точкам
+        public void DrawLine(Point2D p1, Point2D p2)
+        {
+            Line line = new Line();
+            line.Stroke = Brushes.Red;
+            line.StrokeThickness = 3;
+            line.X1 = p1.X;
+            line.Y1 = p1.Y;
+            line.X2 = p2.X;
+            line.Y2 = p2.Y;
+            Scene.Children.Add(line);
+        }
+
+        // Рисование треугольника
+        public void DrawTriangle(Triangle tr)
+        {
+            DrawLine(tr.P1, tr.P2);
+            DrawLine(tr.P2, tr.P3);
+            DrawLine(tr.P3, tr.P1);
+        }
+
+        // Очистка сцены
+        public void ClearScene()
+        {
+            Scene.Children.Clear();
         }
     }
 }
