@@ -7,43 +7,43 @@
         mc:Ignorable="d"
         Title="Фигуры" Height="550" Width="1100">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/а.jpg"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition Width="Auto" MinWidth="338"/>
+            <ColumnDefinition Width="Auto" MinWidth="278"/>
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="20,428,0,10">
-            <Button x:Name="BtnRandomTriangle" Content="Произвольный треугольник" 
-                    Padding="10,5" Click="BtnRandomTriangle_Click" Width="240" FontSize="18"/>
-            <Button x:Name="BtnRandomRectangle" Content="Произвольный прямоугольник" 
-                    Margin="5" Padding="10,5" Click="BtnRandomRectangle_Click" Width="240" FontSize="18"/>
+            <Button x:Name="BtnRandomTriangle" Content="Произвольный&#xD;&#xA; треугольник" 
+                    Margin="5" Padding="10,5" Click="BtnRandomTriangle_Click" Width="256" FontSize="18"/>
+            <Button x:Name="BtnRandomRectangle" Content="Произвольный&#xD;&#xA; прямоугольник" 
+                    Margin="5" Padding="10,5" Click="BtnRandomRectangle_Click" Width="256" FontSize="18"/>
             <Button x:Name="BtnSquare" Content="Квадрат" 
-                    Margin="5" Padding="10,5" Click="BtnSquare_Click" Width="240" FontSize="18"/>
+                    Margin="5" Padding="10,5" Click="BtnSquare_Click" Width="256" FontSize="18"/>
             <Button x:Name="BtnClear" Content="Очистить" 
-                    Margin="5" Padding="10,5" Click="BtnClear_Click" Width="315" BorderBrush="Black" Foreground="White" Background="Black" FontSize="18"/>
+                    Margin="5" Padding="10,5" Click="BtnClear_Click" Width="256" FontSize="18" Foreground="White" Background="Black"/>
         </StackPanel>
 
         <Canvas x:Name="Scene" Grid.Row="1" Grid.Column="0" 
                 HorizontalAlignment="Left" Height="400" 
-                Margin="15,15,0,0" VerticalAlignment="Top" Width="745">
-            <Canvas.Background>
-                <ImageBrush ImageSource="/а.jpg"/>
-            </Canvas.Background>
+                Margin="15,15,0,0" VerticalAlignment="Top" Width="807">
             <Canvas.RenderTransform>
                 <TranslateTransform x:Name="SceneTransform"/>
             </Canvas.RenderTransform>
         </Canvas>
 
-        <StackPanel Grid.Row="1" Grid.Column="1" Margin="12,323,18,0" VerticalAlignment="Top" Height="88">
-            <Label Content="Смещение по X"/>
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="8,300,22,0" VerticalAlignment="Top" Height="112">
+            <Label Content="Смещение по X" FontSize="18"/>
             <Slider x:Name="SliderX" Minimum="-300" Maximum="300" Value="0" 
                     Width="200" TickFrequency="10" IsSnapToTickEnabled="True"
                     ValueChanged="Slider_ValueChanged"/>
-            <Label Content="Смещение по Y"/>
+            <Label Content="Смещение по Y" FontSize="18"/>
             <Slider x:Name="SliderY" Minimum="-300" Maximum="300" Value="0" 
                     Width="200" TickFrequency="10" IsSnapToTickEnabled="True"
                     ValueChanged="Slider_ValueChanged"/>
